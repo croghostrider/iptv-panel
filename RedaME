@@ -1,0 +1,150 @@
+
+install command
+
+curl -O https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/install.sh && chmod +x install.sh && sudo ./install.sh
+
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+### Added
+- New features and functionalities yet to be defined.
+
+### Changed
+- Changes that may affect the functionality of the project.
+
+### Deprecated
+- Features that are no longer recommended for use and will be removed in future releases.
+
+### Removed
+- Features that have been removed in this release.
+
+### Fixed
+- Bug fixes that improve the functionality or performance of the project.
+
+### Security
+- Security improvements and fixes.
+
+---
+
+## [1.0.0] - 2024-10-19
+
+### Added
+- Initial release of the IPTV panel.
+- User management interface.
+- Channel, VOD, and series management functionality.
+- Admin login system.
+
+### Changed
+- Refactored code for better maintainability and readability.
+- Improved error handling in API responses.
+
+### Fixed
+- Resolved issues related to user permissions during channel management.
+- Fixed bugs causing application crashes under specific conditions.
+
+### Security
+- Implemented password hashing for secure storage of user credentials.
+- Added input validation to prevent SQL injection attacks.
+
+---
+
+## [0.1.0] - 2024-10-08
+
+### Added
+- Basic structure of the IPTV panel.
+- Initial setup scripts for installation and configuration.
+
+### Changed
+- Improved documentation and setup instructions.
+
+---
+
+## [0.0.1] - 2024-09-30
+
+### Added
+- Initial project setup.
+- Basic file structure.
+
+Creating an IPTV panel for managing channels, VOD (Video on Demand), and series through a web interface involves several key components. Here’s a high-level overview of how you can design and implement such a system:
+
+### 1. Define Requirements
+   - **User Roles**: Admins, resellers, and users.
+   - **Content Types**: Live channels, VOD content, and series (with seasons and episodes).
+   - **User Management**: Create, update, delete users, and assign roles.
+   - **Content Management**: Add, update, delete channels, VOD, and series.
+   - **Notifications**: Notify users about new content or access issues.
+
+### 2. Technology Stack
+   - **Frontend**: HTML, CSS, JavaScript (React, Vue.js, or Angular for SPA).
+   - **Backend**: Node.js with Express.js or any other backend framework (e.g., Django, Flask).
+   - **Database**: SQLite or any relational database (e.g., MySQL, PostgreSQL).
+   - **Web Server**: Nginx or Apache (for serving the web application).
+   - **Cloudflare**: For CDN and security.
+
+### 3. Database Schema
+   - **Users Table**: `userId`, `userCode`, `role`, etc.
+   - **Channels Table**: `channelId`, `name`, `url`, `type`, etc.
+   - **VOD Table**: `vodId`, `title`, `description`, `filePath`, etc.
+   - **Series Table**: `seriesId`, `title`, `description`, etc.
+   - **Episodes Table**: `episodeId`, `seriesId`, `title`, `filePath`, etc.
+
+### 4. API Endpoints
+   - **User Management**
+     - `POST /api/users` - Create a user
+     - `GET /api/users` - Get all users
+     - `DELETE /api/users/:id` - Delete a user
+   - **Channel Management**
+     - `POST /api/channels` - Add a new channel
+     - `GET /api/channels` - Get all channels
+     - `DELETE /api/channels/:id` - Delete a channel
+   - **VOD Management**
+     - `POST /api/vod` - Add VOD content
+     - `GET /api/vod` - Get all VOD content
+     - `DELETE /api/vod/:id` - Delete VOD content
+   - **Series Management**
+     - `POST /api/series` - Add a new series
+     - `GET /api/series` - Get all series
+     - `DELETE /api/series/:id` - Delete a series
+   - **Episode Management**
+     - `POST /api/episodes` - Add a new episode
+     - `GET /api/episodes` - Get all episodes for a series
+     - `DELETE /api/episodes/:id` - Delete an episode
+
+### 5. Frontend Interface
+   - **Dashboard**: Overview of users, channels, VOD, and series.
+   - **User Management**: Forms for adding/editing users, role management.
+   - **Channel Management**: List of channels with options to add, edit, delete.
+   - **VOD Management**: List of VODs with upload options.
+   - **Series Management**: Add/edit series and manage episodes.
+
+### 6. Security
+   - Use JWT or session-based authentication for API access.
+   - Implement role-based access control to restrict access to certain features.
+
+### 7. Deployment
+   - Host the application on a VPS (like DigitalOcean or Linode).
+   - Use Docker for containerization (optional).
+   - Set up Nginx as a reverse proxy to manage requests.
+
+### 8. Backup and Restore
+   - Implement a backup mechanism for the database and content files.
+   - Create a restore function to retrieve the backup.
+
+### Example Implementation Steps
+
+1. **Set Up Backend**: Create a Node.js/Express server with the necessary routes and database connections.
+2. **Design Frontend**: Use a frontend framework (React/Vue.js) to build a responsive UI.
+3. **Connect Frontend to Backend**: Use Axios or Fetch API to communicate with your backend.
+4. **Test Features**: Ensure that all functionalities work as expected.
+5. **Deploy**: Host your application on a VPS and ensure everything is running smoothly.
+
+### Additional Considerations
+- Monitor server performance and optimize as needed.
+- Implement logging and error handling to troubleshoot issues.
+- Consider scalability if the user base grows significantly.
+
+This outline should give you a solid foundation to start building your IPTV panel. If you have specific questions about any of the steps or components, feel free to ask!
