@@ -3,6 +3,7 @@ install command
 
 curl -O https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/install.sh && chmod +x install.sh && sudo ./install.sh
 
+npm install express body-parser node-fetch dotenv
 
 /**
  * Changelog:
