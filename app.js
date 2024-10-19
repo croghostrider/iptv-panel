@@ -67,6 +67,7 @@ app.post('/admin/banUser', (req, res) => {
 // Unban user
 app.post('/admin/unbanUser', (req, res) => {
     const { userId } = req.body;
+    // Corrected line with proper SQL query
     db.run(`UPDATE users SET status = 'active' WHERE userId = ?`, [userId], function (err) {
         if (err) {
             return res.status(500).send(err.message);
