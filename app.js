@@ -54,6 +54,7 @@ app.get('/admin/userDetails/:userId', (req, res) => {
 // Ban user
 app.post('/admin/banUser', (req, res) => {
     const { userId } = req.body;
+    // Corrected line with proper SQL query
     db.run(`UPDATE users SET status = 'banned' WHERE userId = ?`, [userId], function (err) {
         if (err) {
             return res.status(500).send(err.message);
