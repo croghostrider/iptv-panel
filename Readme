@@ -4,6 +4,14 @@ install command
 curl -O https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/install.sh && chmod +x install.sh && sudo ./install.sh
 
 
+manual install
+
+npm install jsonwebtoken
+
+
+npm install bcrypt
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
