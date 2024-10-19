@@ -23,7 +23,7 @@ mkdir -p ~/iptv-panel
 
 # Download the IPTV panel files using curl
 echo "Downloading IPTV panel files..."
-curl -L -o ~/iptv-panel/app.js https://raw.githubusercontent.com/lalatlangau/iptv-panel/main/app.js
+curl -L -o ~/iptv-panel/app.js https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/app.js
 curl -L -o ~/iptv-panel/public/index.html https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/public/index.html
 curl -L -o ~/iptv-panel/public/style.css https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/public/style.css
 curl -L -o ~/iptv-panel/public/script.js https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/public/script.js
