@@ -42,6 +42,7 @@ app.post('/admin/addUser', (req, res) => {
 // Check user login details
 app.get('/admin/userDetails/:userId', (req, res) => {
     const { userId } = req.params;
+    // Corrected line with proper SQL query
     db.get(`SELECT * FROM users WHERE userId = ?`, [userId], (err, row) => {
         if (err) {
             return res.status(500).send(err.message);
