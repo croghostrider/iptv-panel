@@ -80,6 +80,7 @@ app.post('/admin/unbanUser', (req, res) => {
 // Renew user subscription
 app.post('/admin/renewUser', (req, res) => {
     const { userId, newExpiryDate } = req.body;
+    // Corrected line with proper SQL query
     db.run(`UPDATE users SET expiryDate = ? WHERE userId = ?`, [newExpiryDate, userId], function (err) {
         if (err) {
             return res.status(500).send(err.message);
@@ -92,11 +93,16 @@ app.post('/admin/renewUser', (req, res) => {
 // Add credit for reseller
 app.post('/reseller/addCredit', (req, res) => {
     const { resellerId, amount } = req.body;
+    
+    // Corrected line with proper SQL query
     db.run(`UPDATE resellers SET credit = credit + ? WHERE resellerId = ?`, [amount, resellerId], function (err) {
         if (err) {
             return res.status(500).send(err.message);
         }
+        
+        // Sending notification with the reseller ID and amount
         sendTelegramNotification(`Reseller ${resellerId} credited: ${amount}`);
+        
         res.send({ message: 'Credit added successfully.' });
     });
 });
