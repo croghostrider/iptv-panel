@@ -1,0 +1,37 @@
+
+install command
+
+curl -O https://raw.githubusercontent.com/wayangkulit95/iptv-panel/main/install.sh && chmod +x install.sh && sudo ./install.sh
+
+
+/**
+ * Changelog:
+ * 
+ * v1.0.0 - Initial release
+ * - Created basic Express server
+ * - Added SQLite database for user and reseller management
+ * - Implemented user addition, ban, and unban functionality
+ * - Added renew subscription feature
+ * - Created PM2 configuration for process management
+ * 
+ * v1.1.0 - Added Telegram Notifications
+ * - Integrated Telegram bot notifications for user actions
+ * - Added .env file support for sensitive information
+ * 
+ * v1.2.0 - Improved Error Handling
+ * - Enhanced error handling for database operations
+ * - Updated API responses to include error messages
+ * 
+ * v1.3.0 - Added Reseller Functionality
+ * - Created endpoint for adding credit to resellers
+ * - Improved database schema for resellers
+ * 
+ * v1.4.0 - Security Enhancements
+ * - Added measures to protect user URLs from sniffing
+ * - Implemented additional validation for user input
+ * 
+ * Future Updates:
+ * - Add user login tracking
+ * - Implement user activity logging
+ * - Enhance notification features
+ */
