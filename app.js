@@ -28,7 +28,8 @@ const sendTelegramNotification = async (message) => {
 // Add new user
 app.post('/admin/addUser', (req, res) => {
     const { userId, userCode, expiryDate } = req.body;
-    db.run(`INSERT INTO users (userId, userCode, expiryDate) VALUES (?, ?, ?)`,
+    // Corrected line with proper SQL query and parameters
+    db.run(`INSERT INTO users (userId, userCode, expiryDate) VALUES (?, ?, ?)`, 
         [userId, userCode, expiryDate], function (err) {
             if (err) {
                 return res.status(500).send(err.message);
